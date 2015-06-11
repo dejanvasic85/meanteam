@@ -9,6 +9,7 @@ angular.module('meanteamApp')
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
+
     $scope.isAdmin = Auth.isAdmin;
     $scope.getCurrentUser = Auth.getCurrentUser;
 

@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('meanteamApp')
+// Don't need administration for now...
+/*angular.module('meanteamApp')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/admin', {
@@ -8,3 +9,4 @@ angular.module('meanteamApp')
         controller: 'AdminCtrl'
       });
   });
+  */
