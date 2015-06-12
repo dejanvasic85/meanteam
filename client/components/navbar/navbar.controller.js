@@ -5,7 +5,9 @@ angular.module('meanteamApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }];
+    }, 
+      {'title': 'Seasons',
+      'link' : '/seasons'}];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
