@@ -3,17 +3,29 @@
 angular.module('meanteamApp')
 .controller('SeasonCtrl', function ($scope, $routeParams, $log, Season) {
 
-	var season = Season.get({name : $routeParams.seasonName}, function(s){
-		$log.log(s);
-
-		s.info = "h what!";
-		s.$update();
-	});
-
-
+	/*
+	 *  Scope view model
+	 */
 	$scope.vm = {
-		seasons : [{
-			name : "Williamstown 2015"
-		}]
+		season : null,
+		deleteSeason : deleteSeason
+	};
+
+	activate();
+
+	/*
+	 *  Ctrl methods
+	 */
+
+
+	function activate(){
+
+		Season.get({name : $routeParams.seasonName}, function(response){
+			$scope.vm.season = response;
+		});		
+	}
+
+	function deleteSeason(){
+		alert('are you sure?');
 	}
 });
