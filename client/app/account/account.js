@@ -16,9 +16,9 @@ angular.module('meanteamApp')
         controller: 'SettingsCtrl',
         authenticate: true
       })
-      .when('/seasons', {
-        templateUrl: 'app/account/seasons/seasons.html',
-        controller: 'SeasonsCtrl',
+      .when('/season', {
+        templateUrl: 'app/account/season/season.html',
+        controller: 'SeasonCtrl',
         authenticate: true 
       });
   });

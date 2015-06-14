@@ -10,9 +10,15 @@ angular.module('meanteamApp', [
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
+      .when('/season', {
+        templateUrl: 'app/account/season/season.html',
+        controller: 'SeasonCtrl',
+        authenticate: true 
+      });
       .otherwise({
         redirectTo: '/'
-      });
+      })
+      ;
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');

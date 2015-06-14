@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanteamApp')
-.controller('SeasonsCtrl', function ($scope) {
+.controller('SeasonCtrl', function ($scope) {
 	$scope.vm = {
 		seasons : [{
 			name : "Williamstown 2015"

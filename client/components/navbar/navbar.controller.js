@@ -7,7 +7,7 @@ angular.module('meanteamApp')
       'link': '/'
     }, 
       {'title': 'My Seasons',
-      'link' : '/seasons'}];
+      'link' : '/season'}];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
