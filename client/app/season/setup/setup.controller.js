@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('meanteamApp')
-  .controller('SetupCtrl', function ($scope) {
-    $scope.message = 'Hello';
+  .controller('SetupCtrl', function ($scope, Season) {
+    
+  	
+
   });
