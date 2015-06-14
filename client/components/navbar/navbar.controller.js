@@ -6,7 +6,7 @@ angular.module('meanteamApp')
       'title': 'Home',
       'link': '/'
     }, 
-      {'title': 'Seasons',
+      {'title': 'My Seasons',
       'link' : '/seasons'}];
 
     $scope.isCollapsed = true;
