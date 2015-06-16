@@ -6,26 +6,31 @@ angular.module('meanteamApp')
 	/*
 	 *  Scope view model
 	 */
-	$scope.vm = {
-		season : null,
-		deleteSeason : deleteSeason
-	};
+	 $scope.vm = {
+	 	season : null,
+	 	deleteSeason : deleteSeason,
+	 	fixtureAdded : fixtureAdded
+	 };
 
-	activate();
+	 activate();
 
 	/*
 	 *  Ctrl methods
 	 */
 
 
-	function activate(){
+	 function activate(){
+	 	Season.get({name : $routeParams.seasonName}, function(response){
+	 		$scope.vm.season = response;
+	 		$log.log(response);
+	 	});
+	 }
 
-		Season.get({name : $routeParams.seasonName}, function(response){
-			$scope.vm.season = response;
-		});		
-	}
+	 function deleteSeason(){
+	 	alert('are you sure?');
+	 }
 
-	function deleteSeason(){
-		alert('are you sure?');
-	}
-});
+	 function fixtureAdded(fixture){
+	 	$log.log(fixture);
+	 }
+	});
