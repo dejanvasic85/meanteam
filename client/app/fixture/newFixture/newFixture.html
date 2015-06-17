@@ -6,10 +6,9 @@
 
 	<div class="panel-body">
 
-		<div class="form-group has-feedback" ng-class="{'has-error' : !isValid('opposition')}">
+		<div class="form-group has-feedback" mt-input-highlighter="opposition">
 			<label class="control-label">Opposition</label>
 			<input type="text" name="opposition" class="form-control" ng-model="fixture.opposition" ng-required="true"/>
-			<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-show="!isValid('opposition')"></span>
 		</div>
 	</div>
 

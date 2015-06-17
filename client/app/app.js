@@ -53,4 +53,18 @@ angular.module('meanteamApp', [
         }
       });
     });
-  });
+  })
+
+  .run(function($rootScope){
+    /*
+    * Evaluates whether a particular form element is valid and changed (dirty)
+    */
+    $rootScope.isInputValid = function(formElement){
+      return formElement.$dirty && formElement.$valid
+    }
+
+    $rootScope.isInputNotValid = function(formElement){
+      return formElement.$dirty && formElement.$valid === false;
+    }
+  })
+  ;

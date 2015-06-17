@@ -10,7 +10,7 @@ angular.module('meanteamApp').directive('mtNewFixture', function($log, $timeout)
 		},
 		link : function(scope, element, attrs){
 
-			scope.saving = false;
+			scope.saving = false; // Flag used for button loader
 			scope.save = function(fixture){
 				
 				if(!scope.newFixtureForm.$valid || scope.newFixtureForm.$pristine) {
@@ -25,9 +25,9 @@ angular.module('meanteamApp').directive('mtNewFixture', function($log, $timeout)
 
 			scope.isValid = function(inputName){
 				var formElement = scope.newFixtureForm[inputName];
-				var isValid = formElement.$touched && formElement.$valid;				
+				var isValid = (formElement.$dirty && formElement.$valid) || formElement.$pristine;
 				return isValid;
-			}
+			};
 		}
 	}
 });
