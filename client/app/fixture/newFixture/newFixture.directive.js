@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('meanteamApp').directive('mtNewFixture', function(){
+angular.module('meanteamApp').directive('mtNewFixture', function($log, $timeout){
 	return{
 		restrict : 'EA',
 		templateUrl : 'app/fixture/newFixture/newFixture.html',
@@ -10,14 +10,17 @@ angular.module('meanteamApp').directive('mtNewFixture', function(){
 		},
 		link : function(scope, element, attrs){
 
+			scope.saving = false;
 			scope.save = function(fixture){
 				
-				if(!scope.newFixtureForm.$valid) {
+				if(!scope.newFixtureForm.$valid || scope.newFixtureForm.$pristine) {
 					return;
 				}
-
+				scope.saving = true;
 				scope.season.fixtures.push(angular.copy(fixture));
-				scope.season.$update();
+				scope.season.$update(function(){
+					scope.saving = false;
+				});	
 			}
 		}
 	}
