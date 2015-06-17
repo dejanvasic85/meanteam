@@ -35,7 +35,8 @@ exports.update = function(req, res) {
   Season.findById(req.params.id, function (err, season) {
     if (err) { return handleError(res, err); }
     if(!season) { return res.send(404); }
-    var updated = _.merge(season, req.body);
+    var updated = _.extend(season, req.body);
+  
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.json(200, season);

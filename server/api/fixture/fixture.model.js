@@ -6,7 +6,8 @@ var mongoose = require('mongoose'),
 var FixtureSchema = new Schema({
   name: String,
   info: String,
-  active: Boolean
+  active: Boolean,
+  comments : [{name : String, comment : String}]
 });
 
 module.exports = mongoose.model('Fixture', FixtureSchema);

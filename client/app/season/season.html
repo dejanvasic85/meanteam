@@ -13,10 +13,11 @@
       <h2 id="sec0">{{vm.season.name}}</h2>
 
       <!-- New fixture setup -->
-      <div mt-new-fixture season="vm.season.id" on-fixture-saved="vm.fixtureAdded(fixture)"></div>
+      <div mt-new-fixture season="vm.season" on-fixture-saved="fixtureAdded(fixture)"></div>
 
       <!-- Fixture list -->
       <div ng-repeat="fixture in vm.season.fixtures">   
+        <div>{{fixture.opposition}}</div>
       </div>
 
   </div><!--/row-->

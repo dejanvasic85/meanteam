@@ -31,6 +31,6 @@ angular.module('meanteamApp')
 	 }
 
 	 function fixtureAdded(fixture){
-	 	$log.log(fixture);
+	 	$log.log('fixture added');
 	 }
 	});

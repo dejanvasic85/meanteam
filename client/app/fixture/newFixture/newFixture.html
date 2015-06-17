@@ -1,9 +1,9 @@
-<div>
+<div ng-form="newFixtureForm">
 	<h3><i class="fa fa-pencil"></i> New Fixture</h3>
 	<div class="form-group">
 		<label>Opposition</label>
 		<input type="text" class="form-control" ng-model="fixture.opposition" ng-required />
 	</div>
 
-	<button class="btn btn-default" ng-click="save()">Save</button>
+	<button class="btn btn-default" ng-click="save(fixture)">Save</button>
 </div>
