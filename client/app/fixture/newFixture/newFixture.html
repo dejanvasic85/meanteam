@@ -1,9 +1,19 @@
-<div ng-form="newFixtureForm">
-	<h3><i class="fa fa-pencil"></i> New Fixture</h3>
-	<div class="form-group">
-		<label>Opposition</label>
-		<input type="text" class="form-control" ng-model="fixture.opposition" ng-required />
+<div ng-form="newFixtureForm" class="panel panel-default">
+
+	<div class="panel-heading">
+		<i class="fa fa-pencil"></i> New Fixture
 	</div>
 
-	<mt-button ng-click="save(fixture)" load="saving">Save</mt-button>
+	<div class="panel-body">
+
+		<div class="form-group has-feedback" ng-class="{'has-error' : !isValid('opposition')}">
+			<label class="control-label">Opposition</label>
+			<input type="text" name="opposition" class="form-control" ng-model="fixture.opposition" ng-required="true"/>
+			<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-show="!isValid('opposition')"></span>
+		</div>
+	</div>
+
+	<div class="panel-footer">
+		<mt-button ng-click="save(fixture)" load="saving">Save</mt-button>
+	</div>
 </div>

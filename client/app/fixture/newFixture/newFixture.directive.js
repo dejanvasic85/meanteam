@@ -21,6 +21,12 @@ angular.module('meanteamApp').directive('mtNewFixture', function($log, $timeout)
 				scope.season.$update(function(){
 					scope.saving = false;
 				});	
+			};
+
+			scope.isValid = function(inputName){
+				var formElement = scope.newFixtureForm[inputName];
+				var isValid = formElement.$touched && formElement.$valid;				
+				return isValid;
 			}
 		}
 	}
