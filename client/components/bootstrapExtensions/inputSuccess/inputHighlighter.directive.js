@@ -11,6 +11,9 @@ angular.module('meanteamApp')
 				return;
 			}
 
+			// Add the class that will append an icon in the input
+			element.addClass('has-feedback');
+
 			// Success
 			scope.$watch(isValid, function(val){
 				if(val === true){
