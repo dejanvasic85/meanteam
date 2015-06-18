@@ -6,6 +6,11 @@
 
 	<div class="panel-body">
 
+		<div class="form-group">
+			<label class="control-label">Date - coming soon</label>
+
+		</div>
+
 		<div class="form-group" mt-input-highlighter="opposition">
 			<label class="control-label" for="opposition">Opponent</label>
 			<input type="text" name="opposition" class="form-control" ng-model="fixture.opposition" ng-required="true"/>
@@ -16,7 +21,7 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="btn-group">
-						<label class="btn btn-primary active">
+						<label class="btn btn-primary">
 							<input type="radio" ng-model="fixture.location" name="location" checked="checked" value="Home" /> Home
 						</label>
 
@@ -27,9 +32,15 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="form-group">
+			<label class="control-label">Result</label>
+			coming soon
+		</div>
+
 	</div>
 
-</div>
+
 
 <div class="panel-footer">
 	<mt-button ng-click="save(fixture)" load="saving" ng-disabled="newFixtureForm.$invalid">Save</mt-button>
