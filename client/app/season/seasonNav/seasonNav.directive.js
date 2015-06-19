@@ -7,7 +7,7 @@ angular.module('meanteamApp')
 			templateUrl : 'app/season/seasonNav/seasonNav.html',
 			scope: {
 				seasonName : '=',
-				selectedItem : '='
+				selectedItem : '@'
 			}
 		}
 	});

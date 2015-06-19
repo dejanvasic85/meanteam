@@ -9,7 +9,9 @@ angular.module('meanteamApp')
 	 $scope.vm = {
 	 	season : null,
 	 	deleteSeason : deleteSeason,
-	 	fixtureAdded : fixtureAdded
+	 	fixtureAdded : fixtureAdded,
+	 	showFixtureForm : false,
+	 	toggleFixtureForm : toggleFixtureForm
 	 };
 
 	 activate();
@@ -33,4 +35,9 @@ angular.module('meanteamApp')
 	 function fixtureAdded(fixture){
 	 	$log.log('fixture added');
 	 }
-	});
+
+	 function toggleFixtureForm(){
+	 	$scope.vm.showFixtureForm = !$scope.vm.showFixtureForm;
+	 }
+
+});
