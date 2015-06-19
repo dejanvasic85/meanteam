@@ -6,8 +6,8 @@ angular.module('meanteamApp')
 			restrict : 'EA',
 			templateUrl : 'app/season/seasonNav/seasonNav.html',
 			scope: {
-				seasonName : '='
-
+				seasonName : '=',
+				selectedItem : '='
 			}
 		}
 	});

@@ -23,6 +23,8 @@ angular.module('meanteamApp').directive('mtNewFixture', function($log, $timeout)
 				scope.season.$update(function(){
 					scope.saving = false;
 				});	
+				scope.fixture = {};
+				scope.newFixtureForm.$setPristine();
 			};
 
 			scope.isValid = function(inputName){
