@@ -6,7 +6,8 @@ angular.module('meanteamApp', [
   'ngSanitize',
   'ngRoute',
   'btford.socket-io',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'angular-timeline'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
