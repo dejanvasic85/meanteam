@@ -25,6 +25,7 @@ angular.module('meanteamApp').directive('mtNewFixture', function($log, $timeout)
 				});	
 				scope.fixture = {};
 				scope.newFixtureForm.$setPristine();
+				
 			};
 
 			scope.isValid = function(inputName){

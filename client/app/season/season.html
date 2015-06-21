@@ -1,7 +1,7 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <!--main-->
-<div class="container">
+<div class="container season-container">
   <div class="row">
     <!--left-->
     <div class="col-sm-3" id="leftCol">
@@ -13,23 +13,32 @@
 
       <div class="jumbotron">
         <div class="">
-        <h1>{{vm.season.name}}</h1>
-          <p class="lead">Kick-start your next web app with Angular Fullstack</p>
+          <h1>{{vm.season.name}}</h1>
+          <p class="lead">{{vm.season.leagueName}}</p>
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-default pull-right" ng-click="vm.toggleFixtureForm()">
+          <i class="fa fa-pencil"></i> New Fixture</button>
+        </div>
+      </div> 
 
-      <h2 id="sec0">{{vm.season.name}}</h2>
+      <div class="row top-buffer">
+        <div class="col-xs-12">
+         <!-- New fixture setup -->
+         <div mt-new-fixture season="vm.season" on-fixture-saved="fixtureAdded(fixture)" ng-show="vm.showFixtureForm"></div>
+       </div>
 
-      <button class="btn btn-default" ng-click="vm.toggleFixtureForm()">New Fixture</button>
+     </div>
 
-      <!-- New fixture setup -->
-      <div mt-new-fixture season="vm.season" on-fixture-saved="fixtureAdded(fixture)" ng-show="vm.showFixtureForm"></div>
+     
 
-      <!-- Fixture list -->
-      <div ng-repeat="fixture in vm.season.fixtures">   
-        <div>{{fixture.opposition}}</div>
-      </div>
+     <!-- Fixture list -->
+     <div ng-repeat="fixture in vm.season.fixtures">   
+      <div>{{fixture.opposition}}</div>
+    </div>
 
-    </div><!--/row-->
+  </div><!--/row-->
 </div><!--/container-->

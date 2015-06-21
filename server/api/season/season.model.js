@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 
 var SeasonSchema = new Schema({
   name: String,
-  info: String,
+  leagueName: String,
   active: Boolean,
   managers: [{ name : String, email : String }],
   fixtures: [{ opposition : String, location : String, date : Date, highlights : [String] }]
