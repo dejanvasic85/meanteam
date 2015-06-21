@@ -33,6 +33,7 @@
 
      </div>
 
+     <timeline>
       <timeline-event ng-repeat="event in events">
         <timeline-badge class="{{event.badgeClass}}">
           <i class="glyphicon {{event.badgeIconClass}}"></i>
@@ -44,7 +45,7 @@
           <p>{{event.content}}</p>
         </timeline-panel>
       </timeline-event>
-
+    </timeline>
    </div>
 
   </div><!--/row-->
