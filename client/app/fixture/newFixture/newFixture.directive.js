@@ -8,24 +8,28 @@ angular.module('meanteamApp').directive('mtNewFixture', function($log, $timeout)
 			season : '=',
 			fixtureSaved : '&onFixtureSaved'
 		},
-		link : function(scope, element, attrs){
+		link : function(scope){
 
 			scope.saving = false; // Flag used for button loader
 			scope.datePickerOpened = false;
 
 			scope.save = function(fixture){
-				
+
 				if(!scope.newFixtureForm.$valid || scope.newFixtureForm.$pristine) {
 					return;
 				}
 				scope.saving = true;
-				scope.season.fixtures.push(angular.copy(fixture));
+        var newFixture = angular.copy(fixture);
+
+				scope.season.fixtures.push(angular.copy(newFixture));
 				scope.season.$update(function(){
 					scope.saving = false;
-				});	
+          scope.fixtureSaved(newFixture);
+				});
+
 				scope.fixture = {};
 				scope.newFixtureForm.$setPristine();
-				
+
 			};
 
 			scope.isValid = function(inputName){

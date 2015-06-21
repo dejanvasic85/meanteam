@@ -7,7 +7,7 @@
     <div class="col-sm-3" id="leftCol">
       <div mt-season-navbar season-name="vm.season.name" selected-item="overview"></div>
     </div><!--/left-->
-    
+
     <!--right-->
     <div class="col-sm-9">
 
@@ -23,7 +23,7 @@
           <button class="btn btn-default pull-right" ng-click="vm.toggleFixtureForm()">
           <i class="fa fa-pencil"></i> New Fixture</button>
         </div>
-      </div> 
+      </div>
 
       <div class="row top-buffer">
         <div class="col-xs-12">
@@ -33,11 +33,14 @@
 
      </div>
 
-     
+
 
      <!-- Fixture list -->
-     <div ng-repeat="fixture in vm.season.fixtures">   
+     <div ng-repeat="fixture in vm.season.fixtures">
       <div>{{fixture.opposition}}</div>
+
+
+
     </div>
 
   </div><!--/row-->
