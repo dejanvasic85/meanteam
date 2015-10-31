@@ -1,0 +1,63 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <div mt-season-navbar season-name="vm.seasonName" selected-item="newFixture"></div>
+    </div>
+
+    <div class="col-sm-9">
+      <div ng-form="newFixtureForm" class="panel panel-default">
+
+        <h2>{{vm.seasonName}}</h2>
+
+        <div class="panel-heading">
+          Fixture Details
+        </div>
+
+        <div class="panel-body">
+
+          <div class="form-group" mt-input-highlighter="date">
+            <label class="control-label">Date</label>
+
+            <p class="input-group" style="max-width: 200px">
+              <input type="text" name="date" id="date" class="form-control"
+                     datepicker-popup="dd-MMM-yyyy"
+                     is-open="datePickerOpened"
+                     ng-model="fixture.date"
+                     ng-required="true"
+                     close-text="Close" />
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-default" ng-click="openDatePicker($event)">
+            <i class="glyphicon glyphicon-calendar"></i></button>
+					</span>
+            </p>
+          </div>
+
+          <div class="form-group" mt-input-highlighter="opposition">
+            <label class="control-label" for="opposition">Opponent</label>
+
+            <input type="text" name="opposition" class="form-control"
+                   ng-model="fixture.opposition"
+                   ng-required="true" />
+            </p>
+          </div>
+
+          <div class="form-group">
+            <div class="btn-group">
+              <label class="btn btn-success" ng-model="fixture.location" name="location" btn-radio="'Home'" ng-required="true">Home</label>
+              <label class="btn btn-warning" ng-model="fixture.location" name="location" btn-radio="'Away'" ng-required="true">Away</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-footer">
+          <mt-button ng-click="save(fixture)" load="saving" ng-disabled="newFixtureForm.$invalid">Save</mt-button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
