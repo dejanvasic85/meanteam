@@ -1,18 +1,18 @@
 'use strict';
 
 angular.module('meanteamApp')
-.controller('SeasonCtrl', function ($scope, $routeParams, $log, Season, seasonService) {
+  .controller('SeasonCtrl', function ($scope, $routeParams, $log, Season, CurrentSeason) {
 
-	/*
-	 *  Scope view model
-	 */
-	 $scope.vm = {
-	 	season : null,
-	 	deleteSeason : deleteSeason,
-	 	fixtureAdded : fixtureAdded,
-	 	showFixtureForm : false,
-	 	toggleFixtureForm : toggleFixtureForm
-	 };
+    /*
+     *  Scope view model
+     */
+    $scope.vm = {
+      season: null,
+      deleteSeason: deleteSeason,
+      fixtureAdded: fixtureAdded,
+      showFixtureForm: false,
+      toggleFixtureForm: toggleFixtureForm
+    };
 
     $scope.events = [{
       badgeClass: 'info',
@@ -26,29 +26,31 @@ angular.module('meanteamApp')
       content: 'More awesome content.'
     }];
 
-	 activate();
+    activate();
 
-	/*
-	 *  Ctrl methods
-	 */
+    /*
+     *  Ctrl methods
+     */
 
 
-	 function activate(){
-	 	Season.get({name : $routeParams.seasonName}, function(response){
-	 		$scope.vm.season = response;
-	 	});
-	 }
+    function activate() {
+      $log.debug($routeParams.seasonName);
+      CurrentSeason.get($routeParams.seasonName).then(function(response){
+        $log.info(response.data);
+        $scope.vm.season = response.data;
+      });
+    }
 
-	 function deleteSeason(){
-	 	alert('are you sure?');
-	 }
+    function deleteSeason() {
+      alert('are you sure?');
+    }
 
-	 function fixtureAdded(fixture){
-	 	$log.log('fixture added');
-	 }
+    function fixtureAdded(fixture) {
+      $log.debug('fixture added');
+    }
 
-	 function toggleFixtureForm(){
-	 	$scope.vm.showFixtureForm = !$scope.vm.showFixtureForm;
-	 }
+    function toggleFixtureForm() {
+      $scope.vm.showFixtureForm = !$scope.vm.showFixtureForm;
+    }
 
-});
+  });

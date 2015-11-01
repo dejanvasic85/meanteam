@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('meanteamApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+  .controller('NavbarCtrl', function ($scope, $location, $log, Auth) {
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }, 
+    },
       {'title': 'My Seasons',
-      'link' : '/season/williamstown-2015'}];
+      'link' : '/season/united-2015'}];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
@@ -21,6 +21,7 @@ angular.module('meanteamApp')
     };
 
     $scope.isActive = function(route) {
+
       return route === $location.path();
     };
   });

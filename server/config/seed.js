@@ -7,6 +7,7 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Season = require('../api/season/season.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -47,3 +48,19 @@ User.find({}).remove(function() {
     }
   );
 });
+
+
+Season.find({}).remove(function(){
+  Season.create({
+    name : 'united 2015',
+    codeName : 'united-2015',
+    leagueName : 'Premiership',
+    active : true,
+    managers: [{name : 'Fergie', email : 'fergs@united.com'}],
+    fixtures : [{opposition : 'Mersey', location : 'Europe'}]
+  }, function(){
+    console.log('finished populating seasons');
+  });
+});
+
+

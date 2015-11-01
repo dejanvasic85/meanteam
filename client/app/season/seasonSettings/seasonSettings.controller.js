@@ -5,5 +5,4 @@ angular.module('meanteamApp')
   	$scope.vm = {
   		seasonName : $routeParams.seasonName
   	}
-
   });
