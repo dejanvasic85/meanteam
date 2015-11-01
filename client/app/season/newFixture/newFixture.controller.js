@@ -13,7 +13,7 @@ angular.module('meanteamApp')
         $scope.vm.datePickerOpened = !$scope.vm.datePickerOpened;
       },
       save : function(){
-        console.log($scope.vm.fixture)
+        CurrentSeason.addFixture($scope.vm.fixture);
       }
     }});
 
