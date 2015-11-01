@@ -21,7 +21,9 @@ angular.module('meanteamApp')
     };
 
     $scope.isActive = function(route) {
-
+      if(route.startsWith('/season') && $location.path().startsWith('/season')){
+        return true;
+      }
       return route === $location.path();
     };
   });
