@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanteamApp')
-.controller('SeasonCtrl', function ($scope, $routeParams, $log, Season) {
+.controller('SeasonCtrl', function ($scope, $routeParams, $log, Season, seasonService) {
 
 	/*
 	 *  Scope view model
@@ -36,7 +36,6 @@ angular.module('meanteamApp')
 	 function activate(){
 	 	Season.get({name : $routeParams.seasonName}, function(response){
 	 		$scope.vm.season = response;
-	 		$log.log(response);
 	 	});
 	 }
 

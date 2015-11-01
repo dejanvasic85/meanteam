@@ -5,6 +5,7 @@ angular.module('meanteamApp')
     $routeProvider
       .when('/season/:seasonName/newFixture', {
         templateUrl: 'app/season/newFixture/newFixture.html',
-        controller: 'NewFixtureCtrl'
+        controller: 'NewFixtureCtrl',
+
       });
   });
