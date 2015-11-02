@@ -35,8 +35,7 @@ angular.module('meanteamApp')
 
     function activate() {
       $log.debug($routeParams.seasonName);
-      CurrentSeason.get($routeParams.seasonName).then(function(response){
-        $log.info(response.data);
+      CurrentSeason.get($routeParams.seasonName).then(function (response) {
         $scope.vm.season = response.data;
       });
     }

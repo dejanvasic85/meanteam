@@ -1,10 +1,11 @@
 'use strict';
 
-angular.module('meanteamApp').service('CurrentSeason', function ($http) {
-  var seasonPromise = null,
+angular.module('meanteamApp').service('CurrentSeason', function ($http, $log) {
+  var me = this,
+    seasonPromise = null,
     currentSeasonCode = null;
 
-  angular.extend(this, {
+  angular.extend(me, {
     get: function (seasonCode) {
       if (seasonPromise === null) {
         currentSeasonCode = seasonCode;
@@ -15,11 +16,17 @@ angular.module('meanteamApp').service('CurrentSeason', function ($http) {
       return seasonPromise;
     },
     addFixture: function (fixture) {
-      if (currentSeasonCode === null) {
-        $log.error('sometin wong');
-      }
-      // Todo - this the endpoint!
-      seasonPromise = null; // Kill the cache!
+      me.get().then(function(response){
+        $http({
+          method : 'POST',
+          url : 'api/seasons/' + response.data._id + '/addFixture',
+          data : fixture
+        })
+      });
+      me.clearCache();
+    },
+    clearCache : function(){
+      seasonPromise = null;
     }
   })
 });
