@@ -60,6 +60,7 @@ Season.find({}).remove(function(){
     fixtures : [{
       opposition : 'Mersey', 
       oppositionGoals: 0,
+      date : new Date(),
       teamGoals : 1,
       location : 'Europe',
       highlights : ['Player scores on debut!']

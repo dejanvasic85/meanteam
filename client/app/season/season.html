@@ -22,20 +22,20 @@
         <div class="col-xs-12">
          <!-- New fixture setup -->
          <div mt-new-fixture season="vm.season" on-fixture-saved="fixtureAdded(fixture)" ng-show="vm.showFixtureForm"></div>
-       </div>
+       </div> 
 
      </div>
 
      <timeline>
-      <timeline-event ng-repeat="event in events">
-        <timeline-badge class="{{event.badgeClass}}">
-          <i class="glyphicon {{event.badgeIconClass}}"></i>
+      <timeline-event ng-repeat="f in vm.season.fixtures">
+        <timeline-badge ng-class="{'success' : f.teamGoals > f.oppositionGoals,  'danger' : f.teamGoals < f.oppositionGoals, 'info' : f.teamGoals === f.oppositionGoals}">
+          <i class="fa" ng-class="{'fa-thumbs-o-up' : f.teamGoals > f.oppositionGoals,  'fa-thumbs-o-down' : f.teamGoals < f.oppositionGoals, 'fa-lock' : f.teamGoals === f.oppositionGoals}"></i>
         </timeline-badge>
-        <timeline-panel class="{{event.badgeClass}}">
+        <timeline-panel>
           <timeline-heading>
-            <h4>{{event.title}}</h4>
+            <h4>{{f.opposition}}</h4>
           </timeline-heading>
-          <p>{{event.content}}</p>
+          <p>{{f.date}}</p>
         </timeline-panel>
       </timeline-event>
     </timeline>
