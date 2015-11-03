@@ -57,7 +57,13 @@ Season.find({}).remove(function(){
     leagueName : 'Premiership',
     active : true,
     managers: [{name : 'Fergie', email : 'fergs@united.com'}],
-    fixtures : [{opposition : 'Mersey', location : 'Europe'}]
+    fixtures : [{
+      opposition : 'Mersey', 
+      oppositionGoals: 0,
+      teamGoals : 1,
+      location : 'Europe',
+      highlights : ['Player scores on debut!']
+    }]
   }, function(){
     console.log('finished populating seasons');
   });

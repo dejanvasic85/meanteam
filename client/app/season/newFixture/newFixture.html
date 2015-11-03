@@ -49,6 +49,24 @@
               <label class="btn btn-warning" ng-model="vm.fixture.location" name="location" btn-radio="'Away'">Away</label>
             </div>
           </div>
+
+          <div class="form-group">
+            <label class="control-label" for="result">Result</label>
+              <div class="row">
+                <div class="col-xs-4">
+                  <input type="number" name="teamGoals" ng-model="vm.fixture.teamGoals" class="form-control" placeholder="Team Goals" />
+                </div>
+                <div class="col-xs-4">
+                  <input type="number" name="oppositionGoals" ng-model="vm.fixture.oppositionGoals" class="form-control" placeholder="Opponent Goals" />
+                </div>
+                <div class="col-xs-4">
+                  <span class="label label-danger" ng-show="vm.fixture.teamGoals < vm.fixture.oppositionGoals">Loss</div>
+                  <span class="label label-success" ng-show="vm.fixture.teamGoals > vm.fixture.oppositionGoals">Win</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </div>
 
         <div class="panel-footer">
